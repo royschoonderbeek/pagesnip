@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3, // This is the last manifest version, so we need to use this.
+  "name": "PageSnip", // The name of our extension.
+  "version": "1.0.0", // The first version of our extension. All later versions we will make are for some small bugfixes etc.
+  "description": "Summarizes long web pages, answers questions, and highlights source text.",
+   "icons": { 
+    "16": "icon16.png", // for in the browser toolbar.
+    "48": "icon48.png", // chrome extension page size.
+    "128": "icon128.png" // chrome webstore size of our icon.
+  },
+  "action": { // "action" defines what happens when you click the extension icon.
+    "default_popup": "popup.html", // "default_popup" points to your HTML file (for example, popup.html).
+    "default_icon": { // "default_icon" tells Chrome which icons should appear in the toolbar.
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}
+
+// for more other (optional) keys, we can do some research on: https://developer.chrome.com/docs/extensions/reference/manifest?hl=nl
