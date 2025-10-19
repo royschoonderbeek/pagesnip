@@ -1,9 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "@langchain/google-genai": "^0.2.18",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0"
-  }
-}
-
