@@ -2,25 +2,14 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.action !== 'summarize') return;
 
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 20000);
+  const timeout = setTimeout(() => controller.abort(), 40000);
 
-  const languageMap = {
-    en: 'English',
-    nl: 'Dutch',
-    es: 'Spanish',
-    fr: 'French',
-    de: 'German',
-    pt: 'Portuguese'
-  };
-
-  const selectedLanguageName = languageMap[msg.language] || 'English';
-
-  const prompt = `You are a multilingual assistant. Always respond ONLY in ${selectedLanguageName}, no matter what language the input text is.
-  Summarize the following text in ${selectedLanguageName}.
-  The summary must be fluent, natural, and limited to 10 sentences.
-  If the text is not in ${selectedLanguageName}, first understand it and then write the summary entirely in ${selectedLanguageName}.
-  Text to summarize:
-  ${msg.limitedText}`;
+    const prompt = `
+    Summarize the following text in the same language as the original.
+    Write fluently and naturally.
+    The summary should capture all key points, arguments, and context.
+    Text:
+    ${msg.limitedText}`;
 
   console.log('Sending prompt to server:', { selectedLanguage: msg.language, promptPreview: prompt.slice(0,200) });
 

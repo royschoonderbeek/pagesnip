@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const paragraphs = pageText.split('\n').filter(p => p.length > 50);
-            const limitedText = paragraphs.slice(0, 3).join('\n');
+            const limitedText = paragraphs.join('\n');
 
             chrome.runtime.sendMessage(
               { action: 'summarize', limitedText, language },
