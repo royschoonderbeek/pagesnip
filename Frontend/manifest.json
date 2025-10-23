@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "version": "1.0.0",
   "name": "PageSnip",
-  "description": "Summarizes long web pages, answers questions, and highlights source text.",
+  "description": "Summarizes long web pages",
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
